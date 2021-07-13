@@ -21,6 +21,7 @@ mix.styles([
     'resources/admin/plugins/datatables/dataTables.bootstrap.css',
     'resources/admin/dist/css/AdminLTE.min.css',
     'resources/admin/dist/css/skins/_all-skins.min.css',
+    'resources/css/app.css'
 ], 'public/css/admin.css');
 
 mix.scripts([
@@ -35,8 +36,6 @@ mix.scripts([
     'resources/admin/plugins/iCheck/icheck.min.js',
     'resources/admin/dist/js/app.min.js',
     'resources/admin/dist/js/demo.js',
-    'resources/admin/dist/js/pages/dashboard.js',
-    'resources/admin/dist/js/pages/dashboard2.js',
     'resources/admin/dist/js/script.js'
 ], 'public/js/admin.js');
 

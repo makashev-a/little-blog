@@ -1,0 +1,13 @@
+.pt-10 {
+    padding-top: 10px;
+}
+
+table.table form {
+    display: inline-block;
+}
+
+.delete {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}

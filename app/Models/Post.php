@@ -8,6 +8,42 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
+/**
+ * App\Models\Post
+ *
+ * @property int $id
+ * @property string $title
+ * @property string $slug
+ * @property string $content
+ * @property int|null $category_id
+ * @property int|null $user_id
+ * @property int $status
+ * @property int $views
+ * @property int $is_featured
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User|null $author
+ * @property-read \App\Models\Category|null $category
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Tag[] $tags
+ * @property-read int|null $tags_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Post findSimilarSlugs(string $attribute, array $config, string $slug)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Post newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Post query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereIsFeatured($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereViews($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post withUniqueSlugConstraints(\Illuminate\Database\Eloquent\Model $model, string $attribute, array $config, string $slug)
+ * @mixin \Eloquent
+ */
 class Post extends Model
 {
     use HasFactory, Sluggable;
@@ -39,7 +75,7 @@ class Post extends Model
         );
     }
 
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'slug' => [
