@@ -19,6 +19,7 @@
                 {!! Form::open(['route' => ['tags.update', $tag->id], 'method' => 'put']) !!}
                 <div class="box-header with-border">
                     <h3 class="box-title">Меняем тег</h3>
+                    @include('admin.errors')
                 </div>
                 <div class="box-body">
                     <div class="col-md-6">

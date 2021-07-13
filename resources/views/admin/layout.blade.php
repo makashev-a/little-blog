@@ -437,7 +437,36 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
 <script src="/js/admin.js"></script>
+<script src="/plugins/ckeditor/ckeditor.js"></script>
+<script src="/plugins/ckeditor/translations/ru.js"></script>
+<script src="/plugins/ckfinder/ckfinder.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( 'textarea' ), {
+            ckfinder: {
+                uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
+            },
+            toolbar: {
+                items: [
+                    'heading', '|',
+                    'bold', 'italic', '|',
+                    'link', '|',
+                    'numberedList', 'bulletedList', '|',
+                    'outdent', 'indent', '|',
+                    'code', 'codeBlock', '|',
+                    'insertTable', '|',
+                    'ckfinder', '|',
+                    'uploadImage', 'blockQuote', '|',
+                    'undo', 'redo', '|',
+                ]
+            },
+            language: 'ru'
+        } )
+        .catch( function( error ) {
+            console.error( error );
+        } );
+</script>
+
 </body>
 </html>
