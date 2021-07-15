@@ -8,20 +8,21 @@
                 <div class="col-md-8">
                     <article class="post">
                         <div class="post-thumb">
-                            <a href="blog.html"><img src="{{$post->getImage()}}" alt=""></a>
+                            <a href="{{route('post.show', $post->slug)}}"><img src="{{$post->getImage()}}" alt=""></a>
                         </div>
                         <div class="post-content">
                             <header class="entry-header text-center text-uppercase">
-                                <h6><a href="#"> {{$post->getCategoryTitle()}}</a></h6>
-
-                                <h1 class="entry-title"><a href="blog.html">{{$post->title}}</a></h1>
+                                @if($post->hasCategory())
+                                    <h6><a href="{{route('category.show', $post->category->slug)}}"> {{$post->getCategoryTitle()}}</a></h6>
+                                @endif
+                                <h1 class="entry-title"><a href="{{route('post.show', $post->slug)}}">{{$post->title}}</a></h1>
 
 
                             </header>
                             <div class="entry-content">{!! $post->content !!}</div>
                             <div class="decoration">
                                 @foreach($post->tags as $tag)
-                                <a href="#" class="btn btn-default">{{$tag->title}}</a>
+                                <a href="{{route('tag.show', $tag->slug)}}" class="btn btn-default">{{$tag->title}}</a>
                                 @endforeach
                             </div>
 
