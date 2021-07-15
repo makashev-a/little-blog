@@ -87,9 +87,16 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label for="exampleTextarea1">Описание</label>
+                            <textarea name="description" id="exampleTextarea1" cols="30" rows="10"
+                                      class="form-control">{{old('description')}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <label for="exampleTextarea">Полный текст</label>
                             <textarea name="content" id="exampleTextarea" cols="30" rows="10"
-                                      class="form-control"></textarea>
+                                      class="form-control">{{old('content')}}</textarea>
                         </div>
                     </div>
                 </div>
