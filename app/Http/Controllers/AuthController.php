@@ -45,7 +45,10 @@ class AuthController extends Controller
         ])) {
             return redirect('/');
         }
-        return redirect()->back()->with('status', 'Wrong login or password');
+        return redirect()
+            ->back()
+            ->with('status', 'Wrong login or password')
+            ->withInput($request->except('password'));
     }
 
     public function logout()
