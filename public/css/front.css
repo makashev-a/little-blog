@@ -4536,14 +4536,13 @@ blog css
 }
 
 .top-comment {
-    padding: 30px;
+    padding: 30px 30px 50px 30px;
     background-color: #fff;
     color: #212121;
-    margin-bottom: 20px;
 }
 
 .top-comment img {
-    padding-right: 15px;
+    margin-right: 15px;
 }
 
 .top-comment p {
@@ -5126,6 +5125,7 @@ img.profile-image
     margin: 0px auto 20px;
     display: block;
 }
+
 /* lg */
 @media (min-width: 1400px) {
     .show-search {
@@ -5280,4 +5280,23 @@ img.profile-image
 @media (max-width: 479px) {
 
 
+}
+.pt-10 {
+    padding-top: 10px;
+}
+
+table.table form {
+    display: inline-block;
+}
+
+.delete {
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.avatar {
+    width: 109px;
+    height: 109px;
+    object-fit: cover;
 }

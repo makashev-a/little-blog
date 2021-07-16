@@ -57,6 +57,7 @@ mix.styles([
     'resources/front/css/owl.transitions.css',
     'resources/front/css/style.css',
     'resources/front/css/responsive.css',
+    'resources/css/app.css'
 ], 'public/css/front.css');
 
 mix.scripts([

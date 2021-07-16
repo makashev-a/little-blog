@@ -43,6 +43,13 @@
                                     <input type="file" class="form-control" id="image" name="avatar">
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="user_status" name="user_status" value="{{$user->getUserStatus()}}">
+                                </div>
+                            </div>
+
                             <button type="submit" class="btn send-btn">Update</button>
 
                         </form>

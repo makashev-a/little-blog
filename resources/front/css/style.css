@@ -1052,14 +1052,13 @@ blog css
 }
 
 .top-comment {
-    padding: 30px;
+    padding: 30px 30px 50px 30px;
     background-color: #fff;
     color: #212121;
-    margin-bottom: 20px;
 }
 
 .top-comment img {
-    padding-right: 15px;
+    margin-right: 15px;
 }
 
 .top-comment p {

@@ -61,6 +61,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'user_status'
     ];
 
     /**
@@ -183,5 +184,10 @@ class User extends Authenticatable
         } else {
             $this->ban();
         }
+    }
+
+    public function getUserStatus()
+    {
+        return ($this->user_status != null) ? $this->user_status : 'No status';
     }
 }

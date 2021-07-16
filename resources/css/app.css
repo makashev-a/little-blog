@@ -11,3 +11,9 @@ table.table form {
     border: 0;
     background: transparent;
 }
+
+.avatar {
+    width: 109px;
+    height: 109px;
+    object-fit: cover;
+}

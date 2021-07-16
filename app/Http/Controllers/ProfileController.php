@@ -25,7 +25,8 @@ class ProfileController extends Controller
                 Rule::unique('users')->ignore(Auth::user()->id)
             ],
             'password' => 'nullable',
-            'avatar' => 'nullable|image'
+            'avatar' => 'nullable|image',
+            'user_status' => 'nullable'
         ]);
 
         $user = Auth::user();
