@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- favicon icon -->
@@ -46,10 +46,11 @@
                 <ul class="nav navbar-nav text-uppercase">
                     <li><a href="/">Homepage</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             @foreach($categories as $category)
-                            <li><a href="{{route('category.show', $category->slug)}}">{{$category->title}}</a></li>
+                                <li><a href="{{route('category.show', $category->slug)}}">{{$category->title}}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -81,10 +82,10 @@
     <!-- /.container-fluid -->
 </nav>
 
-    @include('messages.success')
-    @include('messages.ban')
+@include('messages.success')
+@include('messages.ban')
 
-    @yield('content')
+@yield('content')
 
 <!--footer start-->
 <div id="footer">

@@ -4522,6 +4522,10 @@ athuor
 /*===========
 blog css
 =============*/
+.decoration {
+    margin: 10px 0;
+}
+
 .decoration a {
     color: #60c7eb;
     border: 1px solid #60c7eb;

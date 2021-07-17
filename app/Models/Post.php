@@ -258,15 +258,15 @@ class Post extends Model
         return self::find($postID);
     }
 
+    public function hasNext()
+    {
+        return self::where('id', '>', $this->id)->min('id');
+    }
+
     public function getNext()
     {
         $postID = $this->hasNext();
         return self::find($postID);
-    }
-
-    public function hasNext()
-    {
-        return self::where('id', '>', $this->id)->min('id');
     }
 
     public function related()
@@ -276,7 +276,7 @@ class Post extends Model
 
     public function hasCategory()
     {
-        return $this->category != null ? true : false;
+        return $this->category != null;
     }
 
     public static function getPopularPosts()

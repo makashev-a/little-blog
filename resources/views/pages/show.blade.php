@@ -60,7 +60,7 @@
 
                                             <div class="promo-text">
                                                 <p><i class=" pull-left fa fa-angle-left"></i></p>
-                                                <h5>Rubel is doing Cherry theme</h5>
+                                                <h5>{{$post->getPrevious()->title}}</h5>
                                             </div>
                                         </div>
 
@@ -77,7 +77,7 @@
                                         <div class="overlay">
                                             <div class="promo-text">
                                                 <p><i class=" pull-right fa fa-angle-right"></i></p>
-                                                <h5>Rubel is doing Cherry theme</h5>
+                                                <h5>{{$post->getNext()->title}}</h5>
 
                                             </div>
                                         </div>
