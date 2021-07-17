@@ -39,5 +39,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('admin._sidebar', function($view) {
             $view->with('newCommentsCount', Comment::getNewCommentsCount());
         });
+
+        view()->composer('layout', function($view) {
+            $view->with('categories', Category::getAllCategories());
+        });
     }
 }

@@ -1772,3 +1772,7 @@ table.table form {
     height: 109px;
     object-fit: cover;
 }
+
+.owl-item .single-item{
+    margin: 0 5px;
+}

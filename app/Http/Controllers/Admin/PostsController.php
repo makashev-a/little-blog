@@ -123,4 +123,13 @@ class PostsController extends Controller
 
         return redirect()->route('posts.index');
     }
+
+    public function toggleStatus($id)
+    {
+        $post = Post::find($id);
+
+        $post->toggleStatus();
+
+        return redirect()->back();
+    }
 }

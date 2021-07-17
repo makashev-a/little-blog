@@ -47,7 +47,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 
     Route::resource('/categories', 'CategoriesController');
     Route::resource('/tags', 'TagsController');
     Route::resource('/users', 'UsersController');
+    Route::get('/users/toggle/{id}', 'UsersController@toggleStatus')->name('users.toggleStatus');
     Route::resource('/posts', 'PostsController');
+    Route::get('/posts/toggle/{id}', 'PostsController@toggleStatus')->name('posts.toggleStatus');
     Route::get('/comments', 'CommentsController@index');
     Route::get('/comments/toggle/{id}', 'CommentsController@toggle');
     Route::delete('/comments/{id}/destroy', 'CommentsController@destroy')->name('comments.destroy');

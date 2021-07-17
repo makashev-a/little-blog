@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Auth;
 use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -99,7 +100,7 @@ class Post extends Model
     {
         $post = new static;
         $post->fill($fields);
-        $post->user_id = 1;
+        $post->user_id = Auth::user()->id;
         $post->save();
 
         return $post;
@@ -176,9 +177,9 @@ class Post extends Model
         $this->save();
     }
 
-    public function toggleStatus($value)
+    public function toggleStatus()
     {
-        if ($value == null) {
+        if ($this->status == Post::IS_PUBLIC) {
             $this->setDraft();
         } else {
             $this->setPublic();
@@ -295,6 +296,6 @@ class Post extends Model
 
     public function getComments()
     {
-        return $this->comments()->where('status', 1)->get();
+        return $this->comments()->where('status', 1)->orderBy('created_at', 'desc')->get();
     }
 }

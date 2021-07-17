@@ -49,6 +49,11 @@
                                     <img src="{{$user->getAvatar()}}" alt="" class="img-responsive" width="150">
                                 </td>
                                 <td><a href="{{route('users.edit', $user->id)}}" class="fa fa-pencil"></a>
+                                    @if($user->status == 0)
+                                        <a href="{{route('users.toggleStatus', $user->id)}}" class="fa fa-lock"></a>
+                                    @else
+                                        <a href="{{route('users.toggleStatus', $user->id)}}" class="fa fa-thumbs-o-up"></a>
+                                    @endif
                                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                                     <button onclick="return confirm('Вы уверены что хотите удалить данную запись?')" type="submit" class="delete">
                                         <a class="fa fa-remove"></a>

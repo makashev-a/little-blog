@@ -52,8 +52,13 @@ class AuthController extends Controller
             'email' => $request->get('email'),
             'password' => $request->get('password')
         ])) {
+            if (User::checkForBan($request->get('email'))) {
+                Auth::logout();
+                return redirect()->back()->with('ban', 'You are banned');
+            }
             return redirect('/');
         }
+
         return redirect()
             ->back()
             ->with('login_error', 'Wrong login or password')

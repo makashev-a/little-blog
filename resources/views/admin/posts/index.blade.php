@@ -51,6 +51,11 @@
                                 <img src="{{$post->getImage()}}" alt="" width="100">
                             </td>
                             <td><a href="{{route('posts.edit', $post->id)}}" class="fa fa-pencil"></a>
+                                @if ($post->status == 1)
+                                    <a href="{{route('posts.toggleStatus', $post->id)}}" class="fa fa-lock"></a>
+                                @else
+                                    <a href="{{route('posts.toggleStatus', $post->id)}}" class="fa fa-thumbs-o-up"></a>
+                                @endif
                                 {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
                                 <button onclick="return confirm('Вы уверены что хотите удалить данную запись?')" type="submit" class="delete">
                                     <a class="fa fa-remove"></a>

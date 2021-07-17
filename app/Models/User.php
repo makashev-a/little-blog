@@ -177,9 +177,9 @@ class User extends Authenticatable
         $this->save();
     }
 
-    public function toggleBan($value)
+    public function toggleBan()
     {
-        if ($value == null) {
+        if ($this->status == User::IS_BANNED) {
             $this->unban();
         } else {
             $this->ban();
@@ -189,5 +189,16 @@ class User extends Authenticatable
     public function getUserStatus()
     {
         return ($this->user_status != null) ? $this->user_status : 'No status';
+    }
+
+    public static function checkForBan($email)
+    {
+        $user = self::where('email', '=', $email)->first();
+
+        if ($user->status == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

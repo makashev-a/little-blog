@@ -90,6 +90,11 @@ header
     padding: 0 0;
 }
 
+.main-menu .navbar-brand {
+    display: block;
+    margin-right: 45px;
+}
+
 .icon-right {
     float: right;
 }
@@ -298,7 +303,7 @@ article {
 .entry-header h6 a {
     color: #00acdf;
     font-weight: 700;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .entry-header h1 a {
@@ -340,7 +345,7 @@ a.more-link:hover {
 
 .post {
     background: #fff;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .post-content {
@@ -361,7 +366,7 @@ a.more-link:hover {
 .social-share-title {
     padding: 9px 0;
     font-style: italic;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .social-share span a:hover {
@@ -544,9 +549,9 @@ subscribe newsletter
     margin-bottom: 14px;
     border: 1px solid #eeeeee;
     padding: 5px 15px;
-    font-style: italic;
     border-radius: 0;
     background: #fafafa;
+    font-size: 15px;
 }
 
 .btn-subscribe {
@@ -596,7 +601,7 @@ popular post
 }
 
 .p-content a {
-    font-size: 12px;
+    font-size: 13px;
     color: #333333;
     text-decoration: none;
     display: block;
@@ -610,7 +615,7 @@ popular post
 
 .p-content span {
     color: #666666;
-    font-size: 12px;
+    font-size: 14px;
     font-style: italic;
 }
 
@@ -706,7 +711,7 @@ feature post
 owl carousel
 ==============*/
 
-#widget-feature:hover .owl-controls .owl-buttons .owl-prev {
+#widget-feature:hover .owl-nav .owl-buttons .owl-prev {
     left: 10px;
 }
 
@@ -774,7 +779,7 @@ Categories
 
 .widget ul li a {
     line-height: 26px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     color: #323232;
     text-decoration: none;
@@ -842,13 +847,13 @@ footer instragram
 }
 
 .footer-widget {
-    padding: 70px 0;
+    padding: 35px 0;
 
 }
 
 .about-content {
-    padding-top: 35px;
     line-height: 24px;
+    font-size: 15px;
     font-family: 'Merriweather', serif
 }
 
@@ -864,7 +869,7 @@ footer instragram
 
 .address p {
     line-height: 24px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     margin: 0;
 }
@@ -1012,7 +1017,7 @@ athuor
     color: #e2e2e2;
     line-height: 30px;
     font-family: 'Merriweather', serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .footer-copy a {
@@ -1052,9 +1057,11 @@ blog css
 }
 
 .top-comment {
-    padding: 30px 30px 50px 30px;
-    background-color: #fff;
+    background: #fff;
+    padding: 20px;
+    margin: 10px 0;
     color: #212121;
+    overflow: hidden;
 }
 
 .top-comment img {
@@ -1062,13 +1069,14 @@ blog css
 }
 
 .top-comment p {
+    font-size: 15px;
     line-height: 24px;
 }
 
 .single-blog-box {
     position: relative;
     text-align: center;
-    margin: 30px 0;
+    margin: 15px 0;
 }
 
 /*single blog*/
@@ -1122,6 +1130,12 @@ blog css
 .single-blog-box .promo-text h5 {
     color: #fff;
     margin-top: 0;
+}
+
+.single-blog-box img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .single-blog-box:hover .promo-text {
@@ -1199,26 +1213,25 @@ blog css
 }
 
 .bottom-comment .comment-img {
-    padding: 10px 15px 10px;
+    margin-right: 15px;
     float: left;
 }
 
 .bottom-comment h5 {
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 1px;
-    text-transform: uppercase;
     margin-bottom: 5px;
     font-weight: bold;
-
 }
 
 .bottom-comment p.comment-date {
     color: #888888;
+    font-size: 14px;
 }
 
 .bottom-comment p.para {
     color: #212121;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 24px;
     margin-bottom: 5px;
 }
@@ -1248,16 +1261,16 @@ blog css
 }
 
 .leave-comment input, .leave-comment textarea {
+    height: auto;
     background-color: #FAFAFA;
     color: #999999;
     border-radius: 0;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 28px;
-    padding: 20px;
+    padding: 10px 15px;
     border-color: #eee;
     -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, .075);
     box-shadow: inset 0 0 0 rgba(0, 0, 0, .075);
-
 }
 
 .leave-comment input[type="text"] + input[type="email"] {
@@ -1375,7 +1388,7 @@ post grid
 .post-grid .social-share-title {
     padding: 10px 0 30px;
     font-style: italic;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .post-list .entry-header {
@@ -1640,4 +1653,9 @@ img.profile-image
     width: 50%;
     margin: 0px auto 20px;
     display: block;
+}
+
+div.entry-content > p
+{
+    font-size: 16px;
 }
