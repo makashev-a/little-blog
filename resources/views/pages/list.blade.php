@@ -6,6 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
+
                     <div class="row">
                         @foreach($posts as $post)
                             <div class="col-md-6">

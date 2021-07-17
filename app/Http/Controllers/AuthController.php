@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -34,10 +35,18 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required'
         ]);
+
+        $validator->validateWithBag('login');
+
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator, 'login');
+        }
 
         if (Auth::attempt([
             'email' => $request->get('email'),
@@ -47,7 +56,7 @@ class AuthController extends Controller
         }
         return redirect()
             ->back()
-            ->with('status', 'Wrong login or password')
+            ->with('login_error', 'Wrong login or password')
             ->withInput($request->except('password'));
     }
 

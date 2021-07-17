@@ -6,15 +6,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-
                     <div class="leave-comment mr0"><!--leave comment-->
-                        @if(session('status'))
+                        @if(session('login_error'))
                             <div class="alert alert-danger">
-                                {{session('status')}}
+                                {{session('login_error')}}
                             </div>
                         @endif
                         <h3 class="text-uppercase">Login</h3>
-                        @include('admin.errors')
+                        @include('errors.login')
                         <br>
                         <form class="form-horizontal contact-form" role="form" method="post" action="/login">
                             {{csrf_field()}}

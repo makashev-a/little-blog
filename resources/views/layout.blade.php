@@ -75,6 +75,8 @@
     <!-- /.container-fluid -->
 </nav>
 
+    @include('messages.success')
+
     @yield('content')
 
 <!--footer start-->
