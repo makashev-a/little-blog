@@ -38,12 +38,12 @@ class Comment extends Model
 
     public function post()
     {
-        return $this->hasOne(Post::class);
+        return $this->belongsTo(Post::class);
     }
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     private function allow()
@@ -70,5 +70,10 @@ class Comment extends Model
     public function remove()
     {
         $this->delete();
+    }
+
+    public static function getNewCommentsCount()
+    {
+        return self::where('status', 0)->count();
     }
 }
